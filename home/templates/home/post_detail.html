@@ -2,11 +2,13 @@
 
 {% block content %}
 <div class="card">
-    <h1> {{ details.user }}</h1>
+    <h1><a href="{% url 'accounts:profile_user' details.user.id %}" > {{ details.user }}</a></h1>
     <h2> {{ details.body }}</h2>
     <h5>{{ details.user.email }}</h5>
     <h6>{{ details.created|date:"M- d"}}</h6>
-
+    {% if request.user.id == details.user.id %}
+        <a href="{% url 'home:post_delete' details.id %}" class="btn btn-danger" >DELETE</a>
+    {% endif%}
 </div>
 
 {% endblock %}

@@ -2,4 +2,9 @@
 
 {%block content %}
 <h2 class="text-center">{{ user.username }}</h2>
+<div class="card">
+    {%for pst in post %}
+        <a href="{% url 'home:post_detail' pst.id pst.slug %}" class="card-body"> {{ pst.body|truncatewords:5 }} </a>
+    {% endfor %}
+</div>
 {% endblock %}

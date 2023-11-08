@@ -4,7 +4,9 @@
 <div class="card">
     <h1> {{ details.user }}</h1>
     <h2> {{ details.body }}</h2>
-    <h3>{{ details.created }}</h3>
+    <h5>{{ details.user.email }}</h5>
+    <h6>{{ details.created|date:"M- d"}}</h6>
+
 </div>
 
 {% endblock %}

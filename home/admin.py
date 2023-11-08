@@ -10,6 +10,5 @@ class AdminPost(admin.ModelAdmin):
     raw_id_fields = ('user',)
 
 
-
 admin.site.register(Post, AdminPost)
 

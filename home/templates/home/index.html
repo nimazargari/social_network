@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<p>hellloo this is home page</p>
+<div class="card">
+    {%for pst in post %}
+        <a href="{% url 'home:post_detail' pst.id pst.slug %}" class="card-body"> {{ pst.body|truncatewords:5 }} </a>
+    {% endfor %}
+</div>
 
 {% endblock %}

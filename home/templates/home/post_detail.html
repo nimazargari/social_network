@@ -8,6 +8,7 @@
     <h6>{{ details.created|date:"M- d"}}</h6>
     {% if request.user.id == details.user.id %}
         <a href="{% url 'home:post_delete' details.id %}" class="btn btn-danger" >DELETE</a>
+        <a href="{% url 'home:post_update' details.id %}" class="btn btn-success" >UPDATE</a>
     {% endif%}
 </div>
 

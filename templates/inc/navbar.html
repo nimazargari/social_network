@@ -10,6 +10,7 @@
                <a href="" class="navbar-brand">{{ user.username }}</a>
                <a class="navbar-brand" href="{% url 'accounts:profile_user' request.user.id %}">Profile</a>
                <a href="{% url 'accounts:logout_user' %}" class="btn btn-danger">LOGOUT</a>
+               <a href="{% url 'home:post_create' %}" class="btn btn-primary">create</a>
              {% else %}
                <a href="{% url 'accounts:login_user' %}" class="btn btn-success">LOGIN</a>
              {% endif %}
